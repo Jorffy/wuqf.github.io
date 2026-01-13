@@ -12,7 +12,8 @@ try:
     pg = ProxyGenerator()
     pg.FreeProxies()  # Use free rotating proxies
     scholarly.use_proxy(pg)
-    author: dict = scholarly.search_author_id(os.environ["GOOGLE_SCHOLAR_ID"])
+    # author: dict = scholarly.search_author_id(os.environ["GOOGLE_SCHOLAR_ID"])
+    author: dict = scholarly.search_author_id("zo8SfrMAAAAJ")
 except MaxTriesExceededException as e:
     print(f"发生异常: {e}")
 else:
