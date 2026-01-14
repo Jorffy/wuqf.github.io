@@ -21,8 +21,10 @@ jobs:
         if [ -d "./results" ]; then
           cd ./results
           git init
-          git config --local user.name "${GITHUB_ACTOR}"
-          export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          # git config --local user.name "${GITHUB_ACTOR}"
+          # export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+          git config --local user.name "Jorffy"
+          export remote_repo="https://Jorffy:{{ secrets.DEPLOY_TOKEN }}@github.com/Jorffy/qfwu-homepage.git"
           git add *.json
           git commit -m "Updated Citation Data"
           git push "${remote_repo}" HEAD:google-scholar-stats --force
