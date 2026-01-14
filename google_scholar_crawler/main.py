@@ -18,7 +18,7 @@ for attempt in range(1, max_attempts + 1):
         
         # author: dict = scholarly.search_author_id(os.environ['GOOGLE_SCHOLAR_ID'])
         author: dict = scholarly.search_author_id("zo8SfrMAAAAJ")
-        # scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
+        scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
         print(f"Attempt {attempt} success")
         break  # Exit loop on first success
     except Exception as e:
@@ -39,7 +39,7 @@ else:
 #     print(f"发生异常: {e}")
 
 print("正在填充作者详细信息...")
-scholarly.fill(author, sections=["basics", "indices", "counts", "publications"])
+# scholarly.fill(author, sections=["basics", "indices", "counts", "publications"])
 name = author["name"]
 author["updated"] = str(datetime.now())
 author["publications"] = {v["author_pub_id"]: v for v in author["publications"]}
